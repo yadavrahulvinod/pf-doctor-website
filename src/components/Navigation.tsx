@@ -3,6 +3,7 @@ import { Link, useLocation } from "react-router-dom";
 import { Menu, X } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import WhatsAppButton from "./WhatsAppButton";
+import pfDoctorLogo from "@/assets/pf-doctor-logo.png";
 
 const Navigation = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -24,13 +25,11 @@ const Navigation = () => {
         <div className="flex items-center justify-between h-20">
           {/* Logo */}
           <Link to="/" className="flex items-center gap-3">
-            <div className="w-12 h-12 bg-gradient-to-br from-primary to-secondary rounded-lg flex items-center justify-center">
-              <span className="text-white font-display font-bold text-xl">PF</span>
-            </div>
-            <div>
-              <h1 className="font-display font-bold text-xl text-foreground">PF Doctor</h1>
-              <p className="text-xs text-muted-foreground">Your PF Solution Partner</p>
-            </div>
+            <img 
+              src={pfDoctorLogo} 
+              alt="PF Doctor Logo" 
+              className="h-14 w-auto"
+            />
           </Link>
 
           {/* Desktop Navigation */}

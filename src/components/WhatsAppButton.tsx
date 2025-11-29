@@ -26,7 +26,7 @@ const WhatsAppButton = ({
       <button
         onClick={handleWhatsAppClick}
         className={cn(
-          "fixed bottom-6 right-6 z-50 bg-secondary hover:bg-secondary/90 text-white rounded-full p-4 shadow-hover transition-all hover:scale-110",
+          "fixed bottom-6 right-6 z-50 bg-[#25D366] hover:bg-[#20BA5A] text-white rounded-full p-4 shadow-hover transition-all hover:scale-110",
           "flex items-center justify-center group",
           className
         )}
@@ -46,8 +46,8 @@ const WhatsAppButton = ({
       variant={variant === "primary" ? "default" : "outline"}
       size={size}
       className={cn(
-        variant === "primary" && "bg-secondary hover:bg-secondary/90 text-white",
-        variant === "secondary" && "border-secondary text-secondary hover:bg-secondary/10",
+        variant === "primary" && "bg-[#25D366] hover:bg-[#20BA5A] text-white border-0",
+        variant === "secondary" && "border-[#25D366] text-[#25D366] hover:bg-[#25D366]/10",
         "gap-2 font-semibold",
         className
       )}
