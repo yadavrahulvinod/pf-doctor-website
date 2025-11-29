@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom";
 import { Phone, Mail, MapPin } from "lucide-react";
 import WhatsAppButton from "./WhatsAppButton";
+import pfDoctorLogo from "@/assets/pf-doctor-logo.png";
 
 const Footer = () => {
   return (
@@ -9,17 +10,16 @@ const Footer = () => {
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
           {/* Brand */}
           <div className="space-y-4">
-            <div className="flex items-center gap-3">
-              <div className="w-10 h-10 bg-gradient-to-br from-primary to-secondary rounded-lg flex items-center justify-center">
-                <span className="text-white font-display font-bold text-lg">PF</span>
-              </div>
-              <h3 className="font-display font-bold text-lg">PF Doctor</h3>
-            </div>
+            <img 
+              src={pfDoctorLogo} 
+              alt="PF Doctor Logo" 
+              className="h-16 w-auto"
+            />
             <p className="text-sm text-muted-foreground">
               Your cure for PF worries. Fast, transparent, and trusted PF consultancy services since 2020.
             </p>
             <div className="flex items-center gap-2 text-sm text-muted-foreground">
-              <span className="text-secondary font-semibold">★ 4.9</span>
+              <span className="text-primary font-semibold">★ 4.9</span>
               <span>|</span>
               <span>30,000+ Cases Solved</span>
             </div>
