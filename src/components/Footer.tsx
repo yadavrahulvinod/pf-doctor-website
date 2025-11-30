@@ -1,11 +1,11 @@
 import { Link } from "react-router-dom";
 import { Phone, Mail, MapPin } from "lucide-react";
-import WhatsAppButton from "./WhatsAppButton";
+import EmailButton from "./EmailButton";
 import pfDoctorLogo from "@/assets/pf-doctor-logo.png";
 
 const Footer = () => {
   return (
-    <footer className="bg-muted/30 border-t border-border mt-20">
+    <footer className="gradient-dark border-t border-border/50 mt-20">
       <div className="container mx-auto px-4 py-12">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
           {/* Brand */}
@@ -13,13 +13,13 @@ const Footer = () => {
             <img 
               src={pfDoctorLogo} 
               alt="PF Doctor Logo" 
-              className="h-16 w-auto"
+              className="h-20 w-auto drop-shadow-[0_0_15px_rgba(255,0,0,0.2)]"
             />
             <p className="text-sm text-muted-foreground">
               Your cure for PF worries. Fast, transparent, and trusted PF consultancy services since 2020.
             </p>
             <div className="flex items-center gap-2 text-sm text-muted-foreground">
-              <span className="text-primary font-semibold">★ 4.9</span>
+              <span className="text-primary font-semibold">★ 4+</span>
               <span>|</span>
               <span>30,000+ Cases Solved</span>
             </div>
@@ -57,7 +57,14 @@ const Footer = () => {
             <ul className="space-y-3">
               <li className="flex items-start gap-2 text-sm text-muted-foreground">
                 <MapPin className="h-4 w-4 mt-1 text-primary flex-shrink-0" />
-                <span>Thane, Maharashtra, India</span>
+                <a 
+                  href="https://maps.app.goo.gl/2CrhvGSuCtt7ADhr7"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="hover:text-primary transition-colors"
+                >
+                  Find Us: Thane, Maharashtra, India
+                </a>
               </li>
               <li className="flex items-center gap-2 text-sm text-muted-foreground">
                 <Phone className="h-4 w-4 text-primary flex-shrink-0" />
@@ -65,11 +72,16 @@ const Footer = () => {
               </li>
               <li className="flex items-center gap-2 text-sm text-muted-foreground">
                 <Mail className="h-4 w-4 text-primary flex-shrink-0" />
-                <span>info@pfdoctor.com</span>
+                <a 
+                  href="mailto:support@pfdoctor.in"
+                  className="hover:text-primary transition-colors"
+                >
+                  support@pfdoctor.in
+                </a>
               </li>
             </ul>
             <div className="mt-4">
-              <WhatsAppButton variant="secondary" size="sm" className="w-full" />
+              <EmailButton variant="secondary" size="sm" className="w-full" />
             </div>
           </div>
         </div>

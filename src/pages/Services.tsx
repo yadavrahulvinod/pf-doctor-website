@@ -1,7 +1,7 @@
 import { FileText, ArrowRightLeft, UserCheck, Edit3, AlertCircle, Coins, Briefcase, CheckCircle } from "lucide-react";
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
-import WhatsAppButton from "@/components/WhatsAppButton";
+import EmailButton from "@/components/EmailButton";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 
 const Services = () => {
@@ -161,15 +161,15 @@ const Services = () => {
   ];
 
   return (
-    <div className="min-h-screen bg-background">
+    <div className="min-h-screen">
       <Navigation />
       
       {/* Hero Section */}
-      <section className="py-20 bg-gradient-to-br from-primary/5 via-background to-secondary/5">
+      <section className="py-20 gradient-hero animate-fade-in">
         <div className="container mx-auto px-4">
-          <div className="max-w-4xl mx-auto text-center space-y-6 animate-fade-in">
-            <h1 className="text-4xl md:text-5xl font-display font-bold text-foreground">
-              Our <span className="bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">PF Services</span>
+          <div className="max-w-4xl mx-auto text-center space-y-6">
+            <h1 className="text-4xl md:text-5xl font-display font-bold">
+              Our <span className="text-gradient">PF Services</span>
             </h1>
             <p className="text-lg md:text-xl text-muted-foreground leading-relaxed">
               Comprehensive solutions for all your Provident Fund needs
@@ -183,10 +183,10 @@ const Services = () => {
         <div className="container mx-auto px-4">
           <div className="space-y-16 max-w-6xl mx-auto">
             {services.map((service, index) => (
-              <Card key={index} className="border-2 hover:shadow-card transition-shadow">
-                <CardHeader className="border-b border-border bg-muted/20">
+              <Card key={index} className="glass-card border-2 hover:shadow-glow transition-all hover:scale-[1.02]">
+                <CardHeader className="border-b border-border">
                   <div className="flex items-start gap-4">
-                    <div className="w-14 h-14 rounded-lg bg-primary/10 flex items-center justify-center flex-shrink-0">
+                    <div className="w-14 h-14 rounded-lg bg-primary/20 flex items-center justify-center flex-shrink-0 shadow-glow">
                       <service.icon className="h-7 w-7 text-primary" />
                     </div>
                     <div className="flex-1">
@@ -241,7 +241,7 @@ const Services = () => {
 
                   {/* CTA */}
                   <div className="pt-4 border-t border-border">
-                    <WhatsAppButton 
+                    <EmailButton 
                       variant="secondary" 
                       size="default"
                       text={`Get Help with ${service.title}`}
@@ -255,7 +255,7 @@ const Services = () => {
       </section>
 
       {/* Final CTA */}
-      <section className="py-20 bg-gradient-to-br from-primary/5 to-secondary/5">
+      <section className="py-20 gradient-dark">
         <div className="container mx-auto px-4">
           <div className="max-w-3xl mx-auto text-center space-y-6">
             <h2 className="text-3xl md:text-4xl font-display font-bold">Don't See Your PF Issue Listed?</h2>
@@ -263,13 +263,13 @@ const Services = () => {
               We handle all types of PF cases, including complex and unique situations. 
               Contact us and our experts will find a solution for you.
             </p>
-            <WhatsAppButton variant="primary" size="lg" text="Discuss Your PF Issue Now" />
+            <EmailButton variant="primary" size="lg" text="Discuss Your PF Issue Now" />
           </div>
         </div>
       </section>
 
       <Footer />
-      <WhatsAppButton variant="floating" />
+      <EmailButton variant="floating" />
     </div>
   );
 };
