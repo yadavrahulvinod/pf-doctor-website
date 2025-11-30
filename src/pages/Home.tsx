@@ -1,7 +1,7 @@
 import { CheckCircle, Users, Clock, Shield, TrendingUp, FileCheck } from "lucide-react";
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
-import WhatsAppButton from "@/components/WhatsAppButton";
+import EmailButton from "@/components/EmailButton";
 import ServiceCard from "@/components/ServiceCard";
 import TestimonialCard from "@/components/TestimonialCard";
 import StatCard from "@/components/StatCard";
@@ -60,13 +60,13 @@ const Home = () => {
     },
     {
       name: "Priya Sharma",
-      rating: 5,
+      rating: 4.5,
       text: "My name was misspelled in my PF account. PF Doctor fixed it quickly and kept me updated throughout the process.",
       service: "KYC Update"
     },
     {
       name: "Amit Patel",
-      rating: 5,
+      rating: 4,
       text: "Transferred my PF from 3 different employers smoothly. The team was very knowledgeable and helpful.",
       service: "PF Transfer"
     },
@@ -98,16 +98,16 @@ const Home = () => {
   ];
 
   return (
-    <div className="min-h-screen bg-background">
+    <div className="min-h-screen">
       <Navigation />
       
       {/* Hero Section */}
-      <section className="relative overflow-hidden bg-gradient-to-br from-primary/5 via-background to-secondary/5 py-20 md:py-32">
+      <section className="relative overflow-hidden gradient-hero py-20 md:py-32 animate-fade-in">
         <div className="container mx-auto px-4">
-          <div className="max-w-4xl mx-auto text-center space-y-8 animate-fade-in">
-            <h1 className="text-4xl md:text-6xl font-display font-bold text-foreground leading-tight">
+          <div className="max-w-4xl mx-auto text-center space-y-8">
+            <h1 className="text-4xl md:text-6xl font-display font-bold leading-tight animate-slide-up">
               Your Cure for PF Worries —<br />
-              <span className="bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">
+              <span className="text-gradient">
                 Fast, Transparent, Trusted
               </span>
             </h1>
@@ -116,20 +116,20 @@ const Home = () => {
               PF Doctor handles everything smoothly and professionally.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center items-center pt-4">
-              <WhatsAppButton variant="primary" size="lg" />
+              <EmailButton variant="primary" size="lg" />
             </div>
             <div className="flex flex-wrap justify-center gap-6 pt-8 text-sm">
-              <div className="flex items-center gap-2">
+              <div className="flex items-center gap-2 glass-card px-4 py-2 rounded-full">
                 <CheckCircle className="h-5 w-5 text-secondary" />
                 <span className="font-semibold">30,000+ Cases Solved</span>
               </div>
-              <div className="flex items-center gap-2">
+              <div className="flex items-center gap-2 glass-card px-4 py-2 rounded-full">
                 <Shield className="h-5 w-5 text-secondary" />
                 <span className="font-semibold">Trusted Since 2020</span>
               </div>
-              <div className="flex items-center gap-2">
+              <div className="flex items-center gap-2 glass-card px-4 py-2 rounded-full">
                 <span className="text-secondary text-xl">★</span>
-                <span className="font-semibold">4.9★ Rating</span>
+                <span className="font-semibold">4+ Stars Rating</span>
               </div>
             </div>
           </div>
@@ -137,9 +137,9 @@ const Home = () => {
       </section>
 
       {/* Services Overview */}
-      <section className="py-20 bg-background">
+      <section className="py-20">
         <div className="container mx-auto px-4">
-          <div className="text-center mb-12">
+          <div className="text-center mb-12 animate-fade-in">
             <h2 className="text-3xl md:text-4xl font-display font-bold mb-4">Our PF Services</h2>
             <p className="text-muted-foreground max-w-2xl mx-auto">
               Comprehensive PF solutions for all your Provident Fund needs
@@ -154,7 +154,7 @@ const Home = () => {
       </section>
 
       {/* Why Choose PF Doctor */}
-      <section className="py-20 bg-muted/30">
+      <section className="py-20 gradient-dark">
         <div className="container mx-auto px-4">
           <div className="text-center mb-12">
             <h2 className="text-3xl md:text-4xl font-display font-bold mb-4">Why Choose PF Doctor?</h2>
@@ -171,9 +171,9 @@ const Home = () => {
               { icon: TrendingUp, title: "Real-time Updates", desc: "Stay informed at every step" },
               { icon: FileCheck, title: "100% Compliance", desc: "All processes follow EPFO guidelines" },
             ].map((item, index) => (
-              <div key={index} className="flex gap-4 p-6 bg-card rounded-lg border border-border hover:shadow-card transition-shadow">
+              <div key={index} className="flex gap-4 p-6 glass-card rounded-lg hover:shadow-glow transition-all hover:scale-105">
                 <div className="flex-shrink-0">
-                  <div className="w-12 h-12 rounded-lg bg-primary/10 flex items-center justify-center">
+                  <div className="w-12 h-12 rounded-lg bg-primary/20 flex items-center justify-center shadow-glow">
                     <item.icon className="h-6 w-6 text-primary" />
                   </div>
                 </div>
@@ -188,7 +188,7 @@ const Home = () => {
       </section>
 
       {/* How It Works */}
-      <section className="py-20 bg-background">
+      <section className="py-20">
         <div className="container mx-auto px-4">
           <div className="text-center mb-12">
             <h2 className="text-3xl md:text-4xl font-display font-bold mb-4">How It Works</h2>
@@ -201,7 +201,7 @@ const Home = () => {
               {
                 step: "01",
                 title: "Share Your PF Issue",
-                desc: "Contact us on WhatsApp and describe your PF problem. Our experts will understand your needs."
+                desc: "Email us and describe your PF problem. Our experts will understand your needs and respond quickly."
               },
               {
                 step: "02",
@@ -217,7 +217,7 @@ const Home = () => {
               <div key={index} className="relative">
                 <div className="text-center space-y-4">
                   <div className="inline-block">
-                    <div className="w-16 h-16 rounded-full bg-gradient-to-br from-primary to-secondary flex items-center justify-center text-white font-display font-bold text-xl">
+                    <div className="w-16 h-16 rounded-full gradient-primary flex items-center justify-center text-white font-display font-bold text-xl shadow-glow">
                       {item.step}
                     </div>
                   </div>
@@ -225,19 +225,19 @@ const Home = () => {
                   <p className="text-sm text-muted-foreground leading-relaxed">{item.desc}</p>
                 </div>
                 {index < 2 && (
-                  <div className="hidden md:block absolute top-8 left-[calc(50%+2rem)] w-[calc(100%-4rem)] h-0.5 bg-border" />
+                  <div className="hidden md:block absolute top-8 left-[calc(50%+2rem)] w-[calc(100%-4rem)] h-0.5 bg-primary/30" />
                 )}
               </div>
             ))}
           </div>
           <div className="text-center mt-12">
-            <WhatsAppButton variant="primary" size="lg" />
+            <EmailButton variant="primary" size="lg" />
           </div>
         </div>
       </section>
 
       {/* Success Metrics */}
-      <section className="py-20 bg-gradient-to-br from-primary/5 to-secondary/5">
+      <section className="py-20 gradient-dark">
         <div className="container mx-auto px-4">
           <div className="text-center mb-12">
             <h2 className="text-3xl md:text-4xl font-display font-bold mb-4">Our Track Record</h2>
@@ -248,18 +248,21 @@ const Home = () => {
           <div className="grid grid-cols-1 md:grid-cols-3 gap-12 max-w-4xl mx-auto">
             <StatCard icon={CheckCircle} value="30,000+" label="PF Issues Solved" />
             <StatCard icon={Users} value="150+" label="Corporate Partners" />
-            <StatCard icon={TrendingUp} value="4.9★" label="Customer Satisfaction" />
+            <StatCard icon={TrendingUp} value="4+ Stars" label="Customer Satisfaction" />
           </div>
         </div>
       </section>
 
       {/* Client Reviews Preview */}
-      <section className="py-20 bg-background">
+      <section className="py-20">
         <div className="container mx-auto px-4">
           <div className="text-center mb-12">
             <h2 className="text-3xl md:text-4xl font-display font-bold mb-4">What Our Clients Say</h2>
             <p className="text-muted-foreground max-w-2xl mx-auto">
               Real stories from satisfied customers
+            </p>
+            <p className="text-sm text-primary font-semibold mt-2">
+              Average Rating: 4+ Stars | Based on 30,000+ cases
             </p>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-8">
@@ -268,7 +271,7 @@ const Home = () => {
             ))}
           </div>
           <div className="text-center">
-            <a href="/reviews" className="text-primary hover:text-primary/80 font-semibold inline-flex items-center gap-2">
+            <a href="/reviews" className="text-primary hover:text-primary/80 font-semibold inline-flex items-center gap-2 transition-all hover:gap-3">
               View All Reviews
               <span>→</span>
             </a>
@@ -277,7 +280,7 @@ const Home = () => {
       </section>
 
       {/* FAQ Preview */}
-      <section className="py-20 bg-muted/30">
+      <section className="py-20 gradient-dark">
         <div className="container mx-auto px-4">
           <div className="text-center mb-12">
             <h2 className="text-3xl md:text-4xl font-display font-bold mb-4">Frequently Asked Questions</h2>
@@ -288,8 +291,8 @@ const Home = () => {
           <div className="max-w-3xl mx-auto">
             <Accordion type="single" collapsible className="space-y-4">
               {faqs.map((faq, index) => (
-                <AccordionItem key={index} value={`item-${index}`} className="bg-card border border-border rounded-lg px-6">
-                  <AccordionTrigger className="text-left font-semibold hover:no-underline">
+                <AccordionItem key={index} value={`item-${index}`} className="glass-card border rounded-lg px-6">
+                  <AccordionTrigger className="text-left font-semibold hover:no-underline hover:text-primary transition-colors">
                     {faq.question}
                   </AccordionTrigger>
                   <AccordionContent className="text-muted-foreground leading-relaxed">
@@ -300,13 +303,13 @@ const Home = () => {
             </Accordion>
           </div>
           <div className="text-center mt-12">
-            <WhatsAppButton variant="primary" size="lg" text="Have More Questions? Chat Now" />
+            <EmailButton variant="primary" size="lg" text="Have More Questions? Email Us" />
           </div>
         </div>
       </section>
 
       <Footer />
-      <WhatsAppButton variant="floating" />
+      <EmailButton variant="floating" />
     </div>
   );
 };

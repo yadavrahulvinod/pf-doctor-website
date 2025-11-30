@@ -1,19 +1,19 @@
 import { Target, Heart, Award, Users, Shield, TrendingUp } from "lucide-react";
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
-import WhatsAppButton from "@/components/WhatsAppButton";
+import EmailButton from "@/components/EmailButton";
 
 const About = () => {
   return (
-    <div className="min-h-screen bg-background">
+    <div className="min-h-screen">
       <Navigation />
       
       {/* Hero Section */}
-      <section className="py-20 bg-gradient-to-br from-primary/5 via-background to-secondary/5">
+      <section className="py-20 gradient-hero animate-fade-in">
         <div className="container mx-auto px-4">
-          <div className="max-w-4xl mx-auto text-center space-y-6 animate-fade-in">
-            <h1 className="text-4xl md:text-5xl font-display font-bold text-foreground">
-              About <span className="bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">PF Doctor</span>
+          <div className="max-w-4xl mx-auto text-center space-y-6">
+            <h1 className="text-4xl md:text-5xl font-display font-bold">
+              About <span className="text-gradient">PF Doctor</span>
             </h1>
             <p className="text-lg md:text-xl text-muted-foreground leading-relaxed">
               Your trusted partner in navigating the complexities of Provident Fund management
@@ -51,7 +51,7 @@ const About = () => {
       </section>
 
       {/* Mission & Values */}
-      <section className="py-20 bg-muted/30">
+      <section className="py-20 gradient-dark">
         <div className="container mx-auto px-4">
           <div className="text-center mb-12">
             <h2 className="text-3xl md:text-4xl font-display font-bold mb-4">Our Mission & Values</h2>
@@ -60,8 +60,8 @@ const About = () => {
             </p>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-5xl mx-auto">
-            <div className="bg-card p-8 rounded-xl border-2 border-border hover:border-primary transition-colors">
-              <div className="w-16 h-16 rounded-full bg-primary/10 flex items-center justify-center mb-6 mx-auto">
+            <div className="glass-card p-8 rounded-xl border-2 hover:border-primary hover:shadow-glow transition-all hover:scale-105">
+              <div className="w-16 h-16 rounded-full bg-primary/20 flex items-center justify-center mb-6 mx-auto shadow-glow">
                 <Target className="h-8 w-8 text-primary" />
               </div>
               <h3 className="text-xl font-display font-bold text-center mb-4">Our Mission</h3>
@@ -70,8 +70,8 @@ const About = () => {
                 and professional services that eliminate stress and delays.
               </p>
             </div>
-            <div className="bg-card p-8 rounded-xl border-2 border-border hover:border-primary transition-colors">
-              <div className="w-16 h-16 rounded-full bg-secondary/10 flex items-center justify-center mb-6 mx-auto">
+            <div className="glass-card p-8 rounded-xl border-2 hover:border-primary hover:shadow-glow transition-all hover:scale-105">
+              <div className="w-16 h-16 rounded-full bg-secondary/20 flex items-center justify-center mb-6 mx-auto">
                 <Shield className="h-8 w-8 text-secondary" />
               </div>
               <h3 className="text-xl font-display font-bold text-center mb-4">Transparency</h3>
@@ -80,8 +80,8 @@ const About = () => {
                 the steps involved, and realistic timelines.
               </p>
             </div>
-            <div className="bg-card p-8 rounded-xl border-2 border-border hover:border-primary transition-colors">
-              <div className="w-16 h-16 rounded-full bg-primary/10 flex items-center justify-center mb-6 mx-auto">
+            <div className="glass-card p-8 rounded-xl border-2 hover:border-primary hover:shadow-glow transition-all hover:scale-105">
+              <div className="w-16 h-16 rounded-full bg-primary/20 flex items-center justify-center mb-6 mx-auto shadow-glow">
                 <TrendingUp className="h-8 w-8 text-primary" />
               </div>
               <h3 className="text-xl font-display font-bold text-center mb-4">Efficiency</h3>
@@ -128,12 +128,12 @@ const About = () => {
               {
                 year: "2024",
                 title: "30,000+ Success Stories",
-                description: "Achieved 4.9★ rating with 150+ corporate partners"
+                description: "Achieved 4+ star rating with 150+ corporate partners"
               },
             ].map((milestone, index) => (
-              <div key={index} className="flex gap-6 items-start">
+              <div key={index} className="flex gap-6 items-start glass-card p-6 rounded-lg hover:shadow-glow transition-all">
                 <div className="flex-shrink-0">
-                  <div className="w-20 h-20 rounded-full bg-gradient-to-br from-primary to-secondary flex items-center justify-center">
+                  <div className="w-20 h-20 rounded-full gradient-primary flex items-center justify-center shadow-glow">
                     <span className="text-white font-display font-bold text-lg">{milestone.year}</span>
                   </div>
                 </div>
@@ -148,11 +148,11 @@ const About = () => {
       </section>
 
       {/* Success Badge */}
-      <section className="py-20 bg-gradient-to-br from-primary/5 to-secondary/5">
+      <section className="py-20 gradient-dark">
         <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto text-center space-y-8">
             <div className="inline-block">
-              <div className="w-32 h-32 rounded-full bg-gradient-to-br from-primary to-secondary flex items-center justify-center mx-auto mb-6">
+              <div className="w-32 h-32 rounded-full gradient-primary flex items-center justify-center mx-auto mb-6 shadow-glow">
                 <Award className="h-16 w-16 text-white" />
               </div>
             </div>
@@ -162,15 +162,15 @@ const About = () => {
               This achievement motivates us to continue delivering excellence in every case we handle.
             </p>
             <div className="flex flex-wrap justify-center gap-12 pt-8">
-              <div className="text-center">
-                <p className="text-4xl font-display font-bold text-primary mb-2">4.9★</p>
+              <div className="text-center glass-card px-8 py-6 rounded-lg">
+                <p className="text-4xl font-display font-bold text-primary mb-2">4+ Stars</p>
                 <p className="text-sm text-muted-foreground">Customer Rating</p>
               </div>
-              <div className="text-center">
+              <div className="text-center glass-card px-8 py-6 rounded-lg">
                 <p className="text-4xl font-display font-bold text-primary mb-2">150+</p>
                 <p className="text-sm text-muted-foreground">Corporate Partners</p>
               </div>
-              <div className="text-center">
+              <div className="text-center glass-card px-8 py-6 rounded-lg">
                 <p className="text-4xl font-display font-bold text-primary mb-2">30K+</p>
                 <p className="text-sm text-muted-foreground">Cases Resolved</p>
               </div>
@@ -202,8 +202,8 @@ const About = () => {
                   description: "Every team member is trained to prioritize your needs and provide personalized support."
                 },
               ].map((item, index) => (
-                <div key={index} className="bg-card p-8 rounded-xl border border-border">
-                  <div className="w-14 h-14 rounded-lg bg-primary/10 flex items-center justify-center mb-4">
+                <div key={index} className="glass-card p-8 rounded-xl border hover:shadow-glow transition-all hover:scale-105">
+                  <div className="w-14 h-14 rounded-lg bg-primary/20 flex items-center justify-center mb-4">
                     <item.icon className="h-7 w-7 text-primary" />
                   </div>
                   <h3 className="text-xl font-semibold mb-3">{item.title}</h3>
@@ -216,20 +216,20 @@ const About = () => {
       </section>
 
       {/* CTA Section */}
-      <section className="py-20 bg-muted/30">
+      <section className="py-20 gradient-dark">
         <div className="container mx-auto px-4">
           <div className="max-w-3xl mx-auto text-center space-y-6">
             <h2 className="text-3xl md:text-4xl font-display font-bold">Ready to Resolve Your PF Issues?</h2>
             <p className="text-lg text-muted-foreground">
               Join thousands of satisfied customers who trust PF Doctor with their Provident Fund management
             </p>
-            <WhatsAppButton variant="primary" size="lg" />
+            <EmailButton variant="primary" size="lg" />
           </div>
         </div>
       </section>
 
       <Footer />
-      <WhatsAppButton variant="floating" />
+      <EmailButton variant="floating" />
     </div>
   );
 };

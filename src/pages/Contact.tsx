@@ -2,7 +2,7 @@ import { useState } from "react";
 import { Phone, Mail, MapPin, Clock, Send } from "lucide-react";
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
-import WhatsAppButton from "@/components/WhatsAppButton";
+import EmailButton from "@/components/EmailButton";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
@@ -12,6 +12,7 @@ const Contact = () => {
   const { toast } = useToast();
   const [formData, setFormData] = useState({
     name: "",
+    email: "",
     phone: "",
     pfIssue: ""
   });
@@ -20,35 +21,41 @@ const Contact = () => {
     e.preventDefault();
     
     // Validate form
-    if (!formData.name.trim() || !formData.phone.trim() || !formData.pfIssue.trim()) {
+    if (!formData.name.trim() || !formData.email.trim() || !formData.phone.trim() || !formData.pfIssue.trim()) {
       toast({
         title: "Please fill all fields",
-        description: "Name, phone number, and PF issue description are required",
+        description: "All fields are required to submit your inquiry",
         variant: "destructive"
       });
       return;
     }
 
-    // In a real app, this would send to a backend
+    // Send email
+    const subject = encodeURIComponent("PF Assistance Request");
+    const body = encodeURIComponent(
+      `Name: ${formData.name}\nEmail: ${formData.email}\nPhone: ${formData.phone}\n\nPF Issue:\n${formData.pfIssue}`
+    );
+    window.location.href = `mailto:support@pfdoctor.in?subject=${subject}&body=${body}`;
+
     toast({
-      title: "Message received!",
-      description: "We'll contact you shortly via WhatsApp to discuss your PF issue."
+      title: "Opening your email client...",
+      description: "Please send the email to complete your inquiry."
     });
 
     // Reset form
-    setFormData({ name: "", phone: "", pfIssue: "" });
+    setFormData({ name: "", email: "", phone: "", pfIssue: "" });
   };
 
   return (
-    <div className="min-h-screen bg-background">
+    <div className="min-h-screen">
       <Navigation />
       
       {/* Hero Section */}
-      <section className="py-20 bg-gradient-to-br from-primary/5 via-background to-secondary/5">
+      <section className="py-20 gradient-hero animate-fade-in">
         <div className="container mx-auto px-4">
-          <div className="max-w-4xl mx-auto text-center space-y-6 animate-fade-in">
-            <h1 className="text-4xl md:text-5xl font-display font-bold text-foreground">
-              Contact <span className="bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">Us</span>
+          <div className="max-w-4xl mx-auto text-center space-y-6">
+            <h1 className="text-4xl md:text-5xl font-display font-bold">
+              Contact <span className="text-gradient">Us</span>
             </h1>
             <p className="text-lg md:text-xl text-muted-foreground leading-relaxed">
               Get in touch with our PF experts. We're here to help!
@@ -57,15 +64,18 @@ const Contact = () => {
         </div>
       </section>
 
-      {/* WhatsApp CTA Banner */}
-      <section className="py-12 bg-secondary/10 border-y border-border">
+      {/* Email CTA Banner */}
+      <section className="py-12 gradient-dark border-y border-border/50">
         <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto text-center space-y-4">
-            <h2 className="text-2xl font-display font-bold">Get Instant Help on WhatsApp</h2>
+            <h2 className="text-2xl font-display font-bold">Get Expert Help via Email</h2>
             <p className="text-muted-foreground">
-              For fastest response, chat with us directly on WhatsApp. Our experts are ready to assist you!
+              📩 Email: <a href="mailto:support@pfdoctor.in" className="text-primary hover:underline font-semibold">support@pfdoctor.in</a>
             </p>
-            <WhatsAppButton variant="primary" size="lg" />
+            <p className="text-sm text-muted-foreground">
+              For fastest response, email us directly. Our experts will respond within 24 hours!
+            </p>
+            <EmailButton variant="primary" size="lg" />
           </div>
         </div>
       </section>
@@ -91,7 +101,20 @@ const Contact = () => {
                     placeholder="Enter your full name"
                     value={formData.name}
                     onChange={(e) => setFormData({ ...formData, name: e.target.value })}
-                    className="w-full"
+                    className="w-full glass-card"
+                  />
+                </div>
+                <div>
+                  <label htmlFor="email" className="block text-sm font-medium mb-2">
+                    Email Address *
+                  </label>
+                  <Input
+                    id="email"
+                    type="email"
+                    placeholder="your.email@example.com"
+                    value={formData.email}
+                    onChange={(e) => setFormData({ ...formData, email: e.target.value })}
+                    className="w-full glass-card"
                   />
                 </div>
                 <div>
@@ -104,7 +127,7 @@ const Contact = () => {
                     placeholder="Enter your phone number"
                     value={formData.phone}
                     onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
-                    className="w-full"
+                    className="w-full glass-card"
                   />
                 </div>
                 <div>
@@ -116,10 +139,10 @@ const Contact = () => {
                     placeholder="Tell us about your PF problem - withdrawal, transfer, KYC update, etc."
                     value={formData.pfIssue}
                     onChange={(e) => setFormData({ ...formData, pfIssue: e.target.value })}
-                    className="w-full min-h-32"
+                    className="w-full min-h-32 glass-card"
                   />
                 </div>
-                <Button type="submit" size="lg" className="w-full gap-2">
+                <Button type="submit" size="lg" className="w-full gap-2 gradient-primary transition-all hover:scale-105 hover:shadow-glow">
                   <Send className="h-4 w-4" />
                   Submit Inquiry
                 </Button>
@@ -136,8 +159,8 @@ const Contact = () => {
               </div>
 
               <div className="space-y-6">
-                <div className="flex items-start gap-4 p-6 bg-card rounded-lg border border-border">
-                  <div className="w-12 h-12 rounded-lg bg-primary/10 flex items-center justify-center flex-shrink-0">
+                <div className="flex items-start gap-4 p-6 glass-card rounded-lg border hover:shadow-glow transition-all">
+                  <div className="w-12 h-12 rounded-lg bg-primary/20 flex items-center justify-center flex-shrink-0 shadow-glow">
                     <Phone className="h-6 w-6 text-primary" />
                   </div>
                   <div>
@@ -147,37 +170,46 @@ const Contact = () => {
                   </div>
                 </div>
 
-                <div className="flex items-start gap-4 p-6 bg-card rounded-lg border border-border">
-                  <div className="w-12 h-12 rounded-lg bg-secondary/10 flex items-center justify-center flex-shrink-0">
+                <div className="flex items-start gap-4 p-6 glass-card rounded-lg border hover:shadow-glow transition-all">
+                  <div className="w-12 h-12 rounded-lg bg-secondary/20 flex items-center justify-center flex-shrink-0">
                     <Mail className="h-6 w-6 text-secondary" />
                   </div>
                   <div>
                     <h3 className="font-semibold mb-1">Email</h3>
-                    <p className="text-muted-foreground">info@pfdoctor.com</p>
+                    <a href="mailto:support@pfdoctor.in" className="text-primary hover:underline">
+                      support@pfdoctor.in
+                    </a>
                     <p className="text-sm text-muted-foreground mt-1">We'll respond within 24 hours</p>
                   </div>
                 </div>
 
-                <div className="flex items-start gap-4 p-6 bg-card rounded-lg border border-border">
-                  <div className="w-12 h-12 rounded-lg bg-primary/10 flex items-center justify-center flex-shrink-0">
+                <div className="flex items-start gap-4 p-6 glass-card rounded-lg border hover:shadow-glow transition-all">
+                  <div className="w-12 h-12 rounded-lg bg-primary/20 flex items-center justify-center flex-shrink-0 shadow-glow">
                     <MapPin className="h-6 w-6 text-primary" />
                   </div>
                   <div>
                     <h3 className="font-semibold mb-1">Office Address</h3>
-                    <p className="text-muted-foreground">Thane, Maharashtra, India</p>
+                    <a 
+                      href="https://maps.app.goo.gl/2CrhvGSuCtt7ADhr7"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-primary hover:underline"
+                    >
+                      Find Us: Thane, Maharashtra, India
+                    </a>
                     <p className="text-sm text-muted-foreground mt-1">Visit by appointment only</p>
                   </div>
                 </div>
 
-                <div className="flex items-start gap-4 p-6 bg-card rounded-lg border border-border">
-                  <div className="w-12 h-12 rounded-lg bg-secondary/10 flex items-center justify-center flex-shrink-0">
+                <div className="flex items-start gap-4 p-6 glass-card rounded-lg border hover:shadow-glow transition-all">
+                  <div className="w-12 h-12 rounded-lg bg-secondary/20 flex items-center justify-center flex-shrink-0">
                     <Clock className="h-6 w-6 text-secondary" />
                   </div>
                   <div>
                     <h3 className="font-semibold mb-1">Support Hours</h3>
                     <p className="text-muted-foreground">Monday - Saturday</p>
                     <p className="text-muted-foreground">10:00 AM - 7:00 PM IST</p>
-                    <p className="text-sm text-muted-foreground mt-1">WhatsApp available 24/7</p>
+                    <p className="text-sm text-muted-foreground mt-1">Email support 24/7</p>
                   </div>
                 </div>
               </div>
@@ -186,23 +218,35 @@ const Contact = () => {
         </div>
       </section>
 
-      {/* Map Section (Placeholder) */}
-      <section className="py-20 bg-muted/30">
+      {/* Map Section */}
+      <section className="py-20 gradient-dark">
         <div className="container mx-auto px-4">
           <div className="max-w-5xl mx-auto">
             <h2 className="text-3xl font-display font-bold text-center mb-8">Find Us</h2>
-            <div className="bg-card rounded-2xl border-2 border-border overflow-hidden" style={{ height: "400px" }}>
-              <div className="w-full h-full bg-muted/50 flex items-center justify-center">
-                <div className="text-center space-y-3">
-                  <MapPin className="h-12 w-12 text-primary mx-auto" />
-                  <p className="text-muted-foreground">
-                    Thane, Maharashtra, India
-                  </p>
-                  <p className="text-sm text-muted-foreground">
-                    Google Maps integration available
-                  </p>
-                </div>
-              </div>
+            <div className="glass-card rounded-2xl border-2 overflow-hidden" style={{ height: "450px" }}>
+              <iframe
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d120615.72236587253!2d72.83384745!3d19.21820225!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3be7b0e57647569d%3A0xc0afd203acb247d7!2sThane%2C%20Maharashtra!5e0!3m2!1sen!2sin!4v1620000000000!5m2!1sen!2sin"
+                width="100%"
+                height="100%"
+                style={{ border: 0 }}
+                allowFullScreen
+                loading="lazy"
+                referrerPolicy="no-referrer-when-downgrade"
+                title="PF Doctor Location - Thane, Maharashtra"
+              ></iframe>
+            </div>
+            <div className="text-center mt-6">
+              <a
+                href="https://maps.app.goo.gl/2CrhvGSuCtt7ADhr7"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-2"
+              >
+                <Button variant="outline" size="lg" className="gradient-primary text-primary-foreground border-0 hover:scale-105 transition-all">
+                  <MapPin className="h-4 w-4" />
+                  Get Directions
+                </Button>
+              </a>
             </div>
           </div>
         </div>
@@ -218,7 +262,7 @@ const Contact = () => {
             <p className="text-lg text-muted-foreground">
               Don't let PF problems stress you out. Contact us now and get expert help immediately!
             </p>
-            <WhatsAppButton variant="primary" size="lg" text="Chat with Expert Now" />
+            <EmailButton variant="primary" size="lg" text="Email Us Now" />
             <div className="flex items-center justify-center gap-8 pt-4 text-sm text-muted-foreground">
               <div className="flex items-center gap-2">
                 <span className="text-secondary">✓</span>
@@ -230,7 +274,7 @@ const Contact = () => {
               </div>
               <div className="flex items-center gap-2">
                 <span className="text-secondary">✓</span>
-                <span>4.9★ Rated</span>
+                <span>4+ Star Rated</span>
               </div>
             </div>
           </div>
@@ -238,7 +282,7 @@ const Contact = () => {
       </section>
 
       <Footer />
-      <WhatsAppButton variant="floating" />
+      <EmailButton variant="floating" />
     </div>
   );
 };

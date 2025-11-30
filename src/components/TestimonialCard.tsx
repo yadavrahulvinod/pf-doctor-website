@@ -9,15 +9,22 @@ interface TestimonialCardProps {
 }
 
 const TestimonialCard = ({ name, rating, text, service }: TestimonialCardProps) => {
+  const fullStars = Math.floor(rating);
+  const hasHalfStar = rating % 1 !== 0;
+
   return (
-    <Card className="border-2 hover:shadow-card transition-shadow">
+    <Card className="glass-card border-2 hover:shadow-glow transition-all hover:scale-105 animate-fade-in">
       <CardContent className="pt-6">
         <div className="flex items-center gap-1 mb-3">
           {[...Array(5)].map((_, i) => (
             <Star
               key={i}
-              className={`h-4 w-4 ${
-                i < rating ? "fill-secondary text-secondary" : "text-muted"
+              className={`h-4 w-4 transition-all ${
+                i < fullStars
+                  ? "fill-secondary text-secondary"
+                  : i === fullStars && hasHalfStar
+                  ? "fill-secondary/50 text-secondary"
+                  : "text-muted"
               }`}
             />
           ))}

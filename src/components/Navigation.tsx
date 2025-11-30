@@ -2,7 +2,8 @@ import { useState } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { Menu, X } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import WhatsAppButton from "./WhatsAppButton";
+import EmailButton from "./EmailButton";
+import ThemeToggle from "./ThemeToggle";
 import pfDoctorLogo from "@/assets/pf-doctor-logo.png";
 
 const Navigation = () => {
@@ -20,43 +21,47 @@ const Navigation = () => {
   ];
 
   return (
-    <nav className="sticky top-0 z-50 bg-background/95 backdrop-blur-sm border-b border-border shadow-soft">
+    <nav className="sticky top-0 z-50 glass-card shadow-glow">
       <div className="container mx-auto px-4">
-        <div className="flex items-center justify-between h-20">
+        <div className="flex items-center justify-between h-24">
           {/* Logo */}
-          <Link to="/" className="flex items-center gap-3">
+          <Link to="/" className="flex items-center gap-3 transition-transform hover:scale-105">
             <img 
               src={pfDoctorLogo} 
               alt="PF Doctor Logo" 
-              className="h-14 w-auto"
+              className="h-20 w-auto drop-shadow-[0_0_15px_rgba(255,0,0,0.3)]"
             />
           </Link>
 
           {/* Desktop Navigation */}
-          <div className="hidden md:flex items-center gap-8">
+          <div className="hidden md:flex items-center gap-6">
             {navLinks.map((link) => (
               <Link
                 key={link.path}
                 to={link.path}
-                className={`text-sm font-medium transition-colors hover:text-primary ${
+                className={`text-sm font-medium transition-all hover:text-primary relative group ${
                   isActive(link.path) ? "text-primary" : "text-muted-foreground"
                 }`}
               >
                 {link.label}
+                <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-primary transition-all group-hover:w-full" />
               </Link>
             ))}
-            <WhatsAppButton variant="primary" size="sm" />
+            <EmailButton variant="primary" size="sm" />
+            <ThemeToggle />
           </div>
 
           {/* Mobile Menu Button */}
-          <Button
-            variant="ghost"
-            size="icon"
-            className="md:hidden"
-            onClick={() => setIsOpen(!isOpen)}
-          >
-            {isOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
-          </Button>
+          <div className="flex items-center gap-2 md:hidden">
+            <ThemeToggle />
+            <Button
+              variant="ghost"
+              size="icon"
+              onClick={() => setIsOpen(!isOpen)}
+            >
+              {isOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
+            </Button>
+          </div>
         </div>
 
         {/* Mobile Navigation */}
@@ -75,7 +80,7 @@ const Navigation = () => {
                   {link.label}
                 </Link>
               ))}
-              <WhatsAppButton variant="primary" size="sm" className="w-full" />
+              <EmailButton variant="primary" size="sm" className="w-full" />
             </div>
           </div>
         )}
