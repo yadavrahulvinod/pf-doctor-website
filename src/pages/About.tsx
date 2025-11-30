@@ -2,6 +2,8 @@ import { Target, Heart, Award, Users, Shield, TrendingUp } from "lucide-react";
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
 import EmailButton from "@/components/EmailButton";
+import PF_DOCTOR_WEB from "../assets/PF_DOCTOR_WEB.png";
+
 
 const About = () => {
   return (
@@ -23,32 +25,54 @@ const About = () => {
       </section>
 
       {/* Our Story */}
-      <section className="py-20">
-        <div className="container mx-auto px-4">
-          <div className="max-w-4xl mx-auto space-y-8">
-            <div className="text-center mb-12">
-              <h2 className="text-3xl md:text-4xl font-display font-bold mb-4">Our Story</h2>
-            </div>
-            <div className="prose prose-lg max-w-none text-muted-foreground space-y-6">
-              <p className="leading-relaxed">
-                PF Doctor was founded in 2020 with a simple yet powerful mission: to simplify Provident Fund 
-                management for every Indian employee. We recognized that millions of workers face unnecessary 
-                delays, confusion, and stress when dealing with their PF accounts.
-              </p>
-              <p className="leading-relaxed">
-                What started as a small team helping friends and family with their PF issues has grown into 
-                a trusted consultancy that has successfully resolved over 30,000 PF cases. Our journey has been 
-                driven by our commitment to transparency, efficiency, and customer satisfaction.
-              </p>
-              <p className="leading-relaxed">
-                Today, we work with 150+ corporate partners and serve thousands of individual clients across 
-                India. Our expertise spans every aspect of PF management, from simple UAN activations to 
-                complex multi-employer transfers and disputed claims.
-              </p>
-            </div>
-          </div>
-        </div>
-      </section>
+    <section className="py-20">
+  <div className="container mx-auto px-4">
+    <div className="max-w-4xl mx-auto space-y-8">
+
+      {/* Title */}
+      <div className="text-center mb-12">
+        <h2 className="text-3xl md:text-4xl font-display font-bold mb-4">
+          Our Story
+        </h2>
+      </div>
+
+      {/* Director Block */}
+      <div className="text-center mb-12">
+
+        <h5 className="text-xl md:text-2xl font-display font-bold mb-1">
+          Bhavesh Joshi
+        </h5>
+
+        <p className="text-sm text-muted-foreground">
+          Director — PF Doctor
+        </p>
+      </div>
+
+      {/* Story Content */}
+      <div className="prose prose-lg max-w-none text-muted-foreground space-y-6">
+        <p className="leading-relaxed">
+          PF Doctor was founded in 2020 with a simple yet powerful mission: to simplify Provident Fund 
+          management for every Indian employee. We recognized that millions of workers face unnecessary 
+          delays, confusion, and stress when dealing with their PF accounts.
+        </p>
+
+        <p className="leading-relaxed">
+          What started as a small team helping friends and family with their PF issues has grown into 
+          a trusted consultancy that has successfully resolved over 70,000 PF cases. Our journey has been 
+          driven by our commitment to transparency, efficiency, and customer satisfaction.
+        </p>
+
+        <p className="leading-relaxed">
+          Today, we work with 150+ corporate partners and serve thousands of individual clients across 
+          India. Our expertise spans every aspect of PF management, from simple UAN activations to 
+          complex multi-employer transfers and disputed claims.
+        </p>
+      </div>
+
+    </div>
+  </div>
+</section>
+
 
       {/* Mission & Values */}
       <section className="py-20 gradient-dark">
@@ -122,12 +146,12 @@ const About = () => {
               },
               {
                 year: "2023",
-                title: "20,000+ Cases Solved",
+                title: "43,000+ Cases Solved",
                 description: "Expanded team and services to handle complex PF cases"
               },
               {
                 year: "2024",
-                title: "30,000+ Success Stories",
+                title: "70,000+ Success Stories and Still Counting",
                 description: "Achieved 4+ star rating with 150+ corporate partners"
               },
             ].map((milestone, index) => (
@@ -156,7 +180,7 @@ const About = () => {
                 <Award className="h-16 w-16 text-white" />
               </div>
             </div>
-            <h2 className="text-3xl md:text-4xl font-display font-bold">30,000+ PF Issues Solved</h2>
+            <h2 className="text-3xl md:text-4xl font-display font-bold">70,000+ PF Issues Solved</h2>
             <p className="text-lg text-muted-foreground max-w-2xl mx-auto leading-relaxed">
               Every number represents a person who trusted us with their hard-earned savings. 
               This achievement motivates us to continue delivering excellence in every case we handle.
@@ -171,7 +195,7 @@ const About = () => {
                 <p className="text-sm text-muted-foreground">Corporate Partners</p>
               </div>
               <div className="text-center glass-card px-8 py-6 rounded-lg">
-                <p className="text-4xl font-display font-bold text-primary mb-2">30K+</p>
+                <p className="text-4xl font-display font-bold text-primary mb-2">70K+</p>
                 <p className="text-sm text-muted-foreground">Cases Resolved</p>
               </div>
             </div>

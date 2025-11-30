@@ -106,9 +106,9 @@ const Home = () => {
         <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto text-center space-y-8">
             <h1 className="text-4xl md:text-6xl font-display font-bold leading-tight animate-slide-up">
-              Your Cure for PF Worries —<br />
+              Your Cure for PF Worries <br />
               <span className="text-gradient">
-                Fast, Transparent, Trusted
+                Fast - Transparent - Trusted
               </span>
             </h1>
             <p className="text-lg md:text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed">
@@ -121,7 +121,7 @@ const Home = () => {
             <div className="flex flex-wrap justify-center gap-6 pt-8 text-sm">
               <div className="flex items-center gap-2 glass-card px-4 py-2 rounded-full">
                 <CheckCircle className="h-5 w-5 text-secondary" />
-                <span className="font-semibold">30,000+ Cases Solved</span>
+                <span className="font-semibold">70,000+ Cases Solved</span>
               </div>
               <div className="flex items-center gap-2 glass-card px-4 py-2 rounded-full">
                 <Shield className="h-5 w-5 text-secondary" />
@@ -246,7 +246,7 @@ const Home = () => {
             </p>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-12 max-w-4xl mx-auto">
-            <StatCard icon={CheckCircle} value="30,000+" label="PF Issues Solved" />
+            <StatCard icon={CheckCircle} value="70,000+" label="PF Issues Solved" />
             <StatCard icon={Users} value="150+" label="Corporate Partners" />
             <StatCard icon={TrendingUp} value="4+ Stars" label="Customer Satisfaction" />
           </div>
@@ -262,7 +262,7 @@ const Home = () => {
               Real stories from satisfied customers
             </p>
             <p className="text-sm text-primary font-semibold mt-2">
-              Average Rating: 4+ Stars | Based on 30,000+ cases
+              Average Rating: 4+ Stars | Based on 70,000+ cases
             </p>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-8">

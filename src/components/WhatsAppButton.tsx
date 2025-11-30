@@ -13,10 +13,10 @@ const WhatsAppButton = ({
   variant = "primary", 
   size = "default", 
   className,
-  text = "Get Instant Help Now"
+  text = "WhatsApp Us"
 }: WhatsAppButtonProps) => {
   const handleWhatsAppClick = () => {
-    const phoneNumber = "919876543210"; // Replace with actual WhatsApp number
+    const phoneNumber = "918356891147"; // Replace with actual WhatsApp number
     const message = encodeURIComponent("Hi, I need help with my PF issue. Can you assist me?");
     window.open(`https://wa.me/${phoneNumber}?text=${message}`, "_blank");
   };

@@ -5,6 +5,7 @@ import { Button } from "@/components/ui/button";
 import EmailButton from "./EmailButton";
 import ThemeToggle from "./ThemeToggle";
 import pfDoctorLogo from "@/assets/pf-doctor-logo.png";
+import pfDoctorLogo1 from "@/assets/PF_Doctor_Logo.png";
 
 const Navigation = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -25,13 +26,13 @@ const Navigation = () => {
       <div className="container mx-auto px-4">
         <div className="flex items-center justify-between h-24">
           {/* Logo */}
-          <Link to="/" className="flex items-center gap-3 transition-transform hover:scale-105">
-            <img 
-              src={pfDoctorLogo} 
-              alt="PF Doctor Logo" 
-              className="h-20 w-auto drop-shadow-[0_0_15px_rgba(255,0,0,0.3)]"
-            />
-          </Link>
+          <Link to="/" className="h-full flex items-center">
+          <img 
+          src={pfDoctorLogo1} 
+          alt="PF Doctor Logo" 
+          className="h-20 w-auto object-contain"
+  />
+</Link>
 
           {/* Desktop Navigation */}
           <div className="hidden md:flex items-center gap-6">

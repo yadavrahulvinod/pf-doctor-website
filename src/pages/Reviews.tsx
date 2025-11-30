@@ -85,7 +85,7 @@ const Reviews = () => {
                 <p className="text-muted-foreground">Average Rating</p>
               </div>
               <div className="space-y-3 glass-card p-8 rounded-lg hover:shadow-glow transition-all">
-                <div className="text-5xl font-display font-bold text-primary">98%</div>
+                <div className="text-5xl font-display font-bold text-primary">90%</div>
                 <p className="text-muted-foreground">Success Rate</p>
               </div>
             </div>

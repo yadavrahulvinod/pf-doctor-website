@@ -30,12 +30,7 @@ const Contact = () => {
       return;
     }
 
-    // Send email
-    const subject = encodeURIComponent("PF Assistance Request");
-    const body = encodeURIComponent(
-      `Name: ${formData.name}\nEmail: ${formData.email}\nPhone: ${formData.phone}\n\nPF Issue:\n${formData.pfIssue}`
-    );
-    window.location.href = `mailto:support@pfdoctor.in?subject=${subject}&body=${body}`;
+    // Send em
 
     toast({
       title: "Opening your email client...",
@@ -70,7 +65,7 @@ const Contact = () => {
           <div className="max-w-4xl mx-auto text-center space-y-4">
             <h2 className="text-2xl font-display font-bold">Get Expert Help via Email</h2>
             <p className="text-muted-foreground">
-              📩 Email: <a href="mailto:support@pfdoctor.in" className="text-primary hover:underline font-semibold">support@pfdoctor.in</a>
+              📩 Email: <a href="mailto:info@pfdoctor.in" className="text-primary hover:underline font-semibold">info@pfdoctor.in</a>
             </p>
             <p className="text-sm text-muted-foreground">
               For fastest response, email us directly. Our experts will respond within 24 hours!
@@ -142,10 +137,16 @@ const Contact = () => {
                     className="w-full min-h-32 glass-card"
                   />
                 </div>
-                <Button type="submit" size="lg" className="w-full gap-2 gradient-primary transition-all hover:scale-105 hover:shadow-glow">
-                  <Send className="h-4 w-4" />
-                  Submit Inquiry
-                </Button>
+                <EmailButton
+                  text="Submit Inquiry"
+                  variant="primary"
+                  size="lg"
+                  emailData={{
+                    name: formData.name,
+                    phone: formData.phone,
+                    pfIssue: formData.pfIssue,           
+                  }}
+/>
               </form>
             </div>
 
@@ -165,19 +166,29 @@ const Contact = () => {
                   </div>
                   <div>
                     <h3 className="font-semibold mb-1">Phone</h3>
-                    <p className="text-muted-foreground">+91 XXXXX XXXXX</p>
+                    <p className="text-muted-foreground">+918369212201</p>
                     <p className="text-sm text-muted-foreground mt-1">Call us during business hours</p>
                   </div>
                 </div>
-
+                 <div className="flex items-start gap-4 p-6 glass-card rounded-lg border hover:shadow-glow transition-all">
+                  <div className="w-12 h-12 rounded-lg bg-primary/20 flex items-center justify-center flex-shrink-0 shadow-glow">
+                    <Phone className="h-6 w-6 text-primary" />
+                  </div>
+                  <div>
+                    <h3 className="font-semibold mb-1">WhatsApp Us</h3>
+                    <p className="text-muted-foreground">+918591875557</p>
+                    <p className="text-sm text-muted-foreground mt-1">Text us for quick response</p>
+                  </div>
+                </div>
                 <div className="flex items-start gap-4 p-6 glass-card rounded-lg border hover:shadow-glow transition-all">
                   <div className="w-12 h-12 rounded-lg bg-secondary/20 flex items-center justify-center flex-shrink-0">
                     <Mail className="h-6 w-6 text-secondary" />
                   </div>
                   <div>
+                    
                     <h3 className="font-semibold mb-1">Email</h3>
                     <a href="mailto:support@pfdoctor.in" className="text-primary hover:underline">
-                      support@pfdoctor.in
+                      info@pfdoctor.in
                     </a>
                     <p className="text-sm text-muted-foreground mt-1">We'll respond within 24 hours</p>
                   </div>
@@ -195,7 +206,7 @@ const Contact = () => {
                       rel="noopener noreferrer"
                       className="text-primary hover:underline"
                     >
-                      Find Us: Thane, Maharashtra, India
+                      Find Us: Mira Road, Thane, Maharashtra, India
                     </a>
                     <p className="text-sm text-muted-foreground mt-1">Visit by appointment only</p>
                   </div>

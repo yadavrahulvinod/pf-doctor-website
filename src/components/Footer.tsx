@@ -21,7 +21,7 @@ const Footer = () => {
             <div className="flex items-center gap-2 text-sm text-muted-foreground">
               <span className="text-primary font-semibold">★ 4+</span>
               <span>|</span>
-              <span>30,000+ Cases Solved</span>
+              <span>70,000+ Cases Solved</span>
             </div>
           </div>
 
@@ -63,12 +63,16 @@ const Footer = () => {
                   rel="noopener noreferrer"
                   className="hover:text-primary transition-colors"
                 >
-                  Find Us: Thane, Maharashtra, India
+                  Find Us: Mira Bhayander, Maharashtra, India
                 </a>
               </li>
               <li className="flex items-center gap-2 text-sm text-muted-foreground">
                 <Phone className="h-4 w-4 text-primary flex-shrink-0" />
-                <span>+91 XXXXX XXXXX</span>
+                <span>+918591875557</span>
+              </li>
+              <li className="flex items-center gap-2 text-sm text-muted-foreground">
+                <Phone className="h-4 w-4 text-primary flex-shrink-0" />
+                <span>+918369212201</span>
               </li>
               <li className="flex items-center gap-2 text-sm text-muted-foreground">
                 <Mail className="h-4 w-4 text-primary flex-shrink-0" />
@@ -76,7 +80,16 @@ const Footer = () => {
                   href="mailto:support@pfdoctor.in"
                   className="hover:text-primary transition-colors"
                 >
-                  support@pfdoctor.in
+                  info@pfdoctor.in
+                </a>
+              </li>
+              <li className="flex items-center gap-2 text-sm text-muted-foreground">
+                <Mail className="h-4 w-4 text-primary flex-shrink-0" />
+                <a 
+                  href="mailto:support@pfdoctor.in"
+                  className="hover:text-primary transition-colors"
+                >
+                  ceo@pfdoctor.in
                 </a>
               </li>
             </ul>
