@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 import { Phone, Mail, MapPin } from "lucide-react";
 import EmailButton from "./EmailButton";
-import pfDoctorLogo from "@/assets/pf-doctor-logo.png";
+import pfDoctorLogo from "@/assets/PF_Doctor_Logo.png";
 
 const Footer = () => {
   return (
