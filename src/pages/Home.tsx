@@ -303,7 +303,8 @@ const Home = () => {
             </Accordion>
           </div>
           <div className="text-center mt-12">
-            <EmailButton variant="primary" size="lg" text="Have More Questions? Email Us" />
+            <EmailButton variant="primary" size="lg" text="Get a faster response – WhatsApp us now.
+" />
           </div>
         </div>
       </section>

@@ -20,16 +20,16 @@ const EmailButton = ({
   variant = "primary",
   size = "default",
   className,
-  text = "Email Us Now for Assistance",
+  text = "Get a faster response – WhatsApp us now.",
   emailData,
 }: EmailButtonProps) => {
  
   // ================= HANDLERS =================
-  const handleEmailClick = () => {
-    const to ="info@pfdoctor.in" ;
-    const subject = encodeURIComponent("PF Assistance Request");
-    const body = emailData
-      ? encodeURIComponent(`
+ const handleEmailClick = () => {
+  const phoneNumber = "918591875557"; // No + in wa.me version
+
+  const message = emailData
+    ? `
 Hello PF Doctor Team,
 
 I need assistance with my PF issue.
@@ -37,13 +37,12 @@ I need assistance with my PF issue.
 Details:
 Name: ${emailData.name || ""}
 Phone: ${emailData.phone || ""}
-
 UAN: ${emailData.UAN || ""}
 Problem: ${emailData.pfIssue || ""}
 
 Thank you.
-`)
-      : encodeURIComponent(`
+`
+    : `
 Hello PF Doctor Team,
 
 I need assistance with my PF issue.
@@ -55,14 +54,12 @@ UAN:
 Problem:
 
 Thank you.
-`);
+`;
 
-    const gmailUrl = `https://mail.google.com/mail/?view=cm&fs=1&to=${to}&su=${subject}&body=${body}`;
-    const newWindow = window.open(gmailUrl, "_blank");
-    if (!newWindow) {
-      window.location.href = `mailto:${to}?subject=${subject}&body=${body}`;
-    }
-  };
+  const encodedMessage = encodeURIComponent(message);
+  window.open(`https://wa.me/${phoneNumber}?text=${encodedMessage}`, "_blank");
+};
+
 
   const handleContactRedirect = () => {
     window.location.href = "/contact";

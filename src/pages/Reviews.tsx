@@ -48,7 +48,7 @@ const Reviews = () => {
               <span className="text-2xl font-display font-bold">4+ Stars</span>
             </div>
             <p className="text-sm text-primary font-semibold">
-              Average Rating: 4+ Stars | Based on 30,000+ cases
+              Average Rating: 4+ Stars | Based on 70,000+ cases
             </p>
           </div>
         </div>
@@ -77,7 +77,7 @@ const Reviews = () => {
           <div className="max-w-5xl mx-auto">
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8 text-center">
               <div className="space-y-3 glass-card p-8 rounded-lg hover:shadow-glow transition-all">
-                <div className="text-5xl font-display font-bold text-primary">30K+</div>
+                <div className="text-5xl font-display font-bold text-primary">70K+</div>
                 <p className="text-muted-foreground">Happy Customers</p>
               </div>
               <div className="space-y-3 glass-card p-8 rounded-lg hover:shadow-glow transition-all">
@@ -122,7 +122,7 @@ const Reviews = () => {
       <section className="py-20 gradient-dark">
         <div className="container mx-auto px-4">
           <div className="max-w-3xl mx-auto text-center space-y-6">
-            <h2 className="text-3xl md:text-4xl font-display font-bold">Join 30,000+ Satisfied Customers</h2>
+            <h2 className="text-3xl md:text-4xl font-display font-bold">Join 70,000+ Satisfied Customers</h2>
             <p className="text-lg text-muted-foreground">
               Experience the same professional, transparent, and efficient PF service that our clients love
             </p>

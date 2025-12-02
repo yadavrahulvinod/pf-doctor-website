@@ -159,6 +159,17 @@ const Contact = () => {
                 </p>
               </div>
 
+               <div className="flex items-start gap-4 p-6 glass-card rounded-lg border hover:shadow-glow transition-all">
+                  <div className="w-12 h-12 rounded-lg bg-primary/20 flex items-center justify-center flex-shrink-0 shadow-glow">
+                    <Phone className="h-6 w-6 text-primary" />
+                  </div>
+                  <div>
+                    <h3 className="font-semibold mb-1">WhatsApp Us</h3>
+                    <p className="text-muted-foreground">+918591875557</p>
+                    <p className="text-sm text-muted-foreground mt-1">For fastest response WhatsApp us</p>
+                  </div>
+                </div>
+
               <div className="space-y-6">
                 <div className="flex items-start gap-4 p-6 glass-card rounded-lg border hover:shadow-glow transition-all">
                   <div className="w-12 h-12 rounded-lg bg-primary/20 flex items-center justify-center flex-shrink-0 shadow-glow">
@@ -170,16 +181,7 @@ const Contact = () => {
                     <p className="text-sm text-muted-foreground mt-1">Call us during business hours</p>
                   </div>
                 </div>
-                 <div className="flex items-start gap-4 p-6 glass-card rounded-lg border hover:shadow-glow transition-all">
-                  <div className="w-12 h-12 rounded-lg bg-primary/20 flex items-center justify-center flex-shrink-0 shadow-glow">
-                    <Phone className="h-6 w-6 text-primary" />
-                  </div>
-                  <div>
-                    <h3 className="font-semibold mb-1">WhatsApp Us</h3>
-                    <p className="text-muted-foreground">+918591875557</p>
-                    <p className="text-sm text-muted-foreground mt-1">Text us for quick response</p>
-                  </div>
-                </div>
+                
                 <div className="flex items-start gap-4 p-6 glass-card rounded-lg border hover:shadow-glow transition-all">
                   <div className="w-12 h-12 rounded-lg bg-secondary/20 flex items-center justify-center flex-shrink-0">
                     <Mail className="h-6 w-6 text-secondary" />
@@ -273,7 +275,7 @@ const Contact = () => {
             <p className="text-lg text-muted-foreground">
               Don't let PF problems stress you out. Contact us now and get expert help immediately!
             </p>
-            <EmailButton variant="primary" size="lg" text="Email Us Now" />
+            <EmailButton variant="primary" size="lg" text="WhatsApp Us" />
             <div className="flex items-center justify-center gap-8 pt-4 text-sm text-muted-foreground">
               <div className="flex items-center gap-2">
                 <span className="text-secondary">✓</span>
